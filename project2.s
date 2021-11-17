@@ -18,4 +18,7 @@ la $t1, input	#loading the address of input into $t1 register
 li $s6, 0	# for storing the sum of decimal value of each valid base 27 number (2992540%11=1, so N=27 in my case)
 
 
+
 storing:
+lb $t0, ($t1)
+addi $t1, $t1, 1
