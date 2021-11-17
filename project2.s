@@ -18,6 +18,7 @@ la $t1, input						#loading the address of input into $t1 register
 li $s6, 0						# for storing the sum of decimal value of each valid base 27 number (2992540%11=1, so N=27 in my case)
 li $t4, 0						# loop counter for four charcters stored in $s1.
 li $t8, 0
+li $t3, 1						# intializing the power
 
 
 
@@ -92,6 +93,8 @@ j conversion
 
 
 conversion:
+mul $a2, $a0, $t3
+add $s6, $a2, $zero
 
 
 
