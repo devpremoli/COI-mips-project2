@@ -63,6 +63,10 @@ checker:		# a label where a character in $t0 is checked if it is valid or not
 
 beq $t0, 97, lowercase
 beq $t0, 65, uppercase
+beq $t0, 48, number
+
+number:
+bgt $t0, 57, error
 
 lowercase:
 bgt $t0, 113, error
