@@ -68,17 +68,25 @@ bge $t0, 48, number
 
 number:
 bgt $t0, 57, error
-ble $t0, 57, valid
+ble $t0, 57, num
 
 lowercase:
 bgt $t0, 113, error
-ble $t0, 113, valid
+ble $t0, 113, lcase
 
 uppercase:
 bgt $t0, 81, error
-ble $t0, 81, valid
+ble $t0, 81, ucase
 
-valid:
+num:
+addi $a0, $t0, -48
+
+ucase:
+addi $a0, $t0, -55
+
+lcase:
+addi $a0, $t0, -87
+
 
 
 
