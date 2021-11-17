@@ -24,8 +24,8 @@ li $t8, 0
 storing:
 lb $t0, ($t1)
 addi $t1, $t1, 1
-beq $t0, 10, exit					#branch if character is \n
-beq $t0, 0, exit					#branch if character is null
+beq $t0, 10, ender					#branch if character is \n
+beq $t0, 0, ender					#branch if character is null
 beq $t0, 32, storing					#branch if character is space
 beq $t0, 11, storing					#branch if character is tab
 
@@ -49,6 +49,7 @@ sb $t0, 3($s1)						#storing the fourth character
 addi $t1, $t1, 3					# incrementing 3 for three character stored.
 
 
+ender:	# if null or end line is found we want to end the storing loop. so branching to this label whenever null or end line is found
 
 printing:
 li $v0, 4
