@@ -46,3 +46,8 @@ sb $t0, 3($s1)		#storing the fourth character
 
 addi $t1, $t1, 3	# incrementing 3 for three character stored.
 j storing
+
+
+exit:
+li $v0, 10
+syscall
