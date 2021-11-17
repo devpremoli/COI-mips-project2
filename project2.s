@@ -34,4 +34,12 @@ la $s1, string		#loading the address of string data into s1
 
 lb $t0, -1($t1)
 sb $t0, 0($s1)		#storing the first character in the first byte of $s6
+
+lb $t0, 0($st1)
+sb $t0, 1($t1)		#storing the second character in the second byte of $s6
+
+lb $t0, 1($s1)
+sb $t0, 2($t1)		#storing the third character
+
+
 j storing
