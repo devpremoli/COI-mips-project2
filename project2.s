@@ -24,8 +24,8 @@ lb $t0, ($t1)
 addi $t1, $t1, 1
 beq $t0, 10, exit	#branch if character is \n
 beq $t0, 0, exit	#branch if character is null
-beq $t0, 32, exit	#branch if character is space
-beq $t0, 11, exit	#branch if character is tab
+beq $t0, 32, storing	#branch if character is space
+beq $t0, 11, storing	#branch if character is tab
 
 # if any of the above branching is not executed, then the character is valid.
 # Now storing the four characters to work with.
