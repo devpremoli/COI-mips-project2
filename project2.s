@@ -57,6 +57,11 @@ li $v0, 4
 la $a0, string
 syscall
 
+error:
+li $v0, 4
+la $a0, prompt
+syscall
+
 exit:
 li $v0, 10
 syscall
