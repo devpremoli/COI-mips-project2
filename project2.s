@@ -16,7 +16,7 @@ syscall
 la $t1, input						#loading the address of input into $t1 register
 
 li $s6, 0						# for storing the sum of decimal value of each valid base 27 number (2992540%11=1, so N=27 in my case)
-
+li $t4, 0						# loop counter for four charcters stored in $s1.
 li $t8, 0
 
 
@@ -52,6 +52,11 @@ addi $t1, $t1, 3					# incrementing 3 for three character stored.
 ender:	# if null or end line is found we want to end the storing loop. so branching to this label whenever null or end line is found
 beq $t8, 0, error
 la $s1, string+4		#to start from the end character
+
+handling:			#after four characters has been stored to $s1 register, now $s1 is handeled in this handling label.
+beq $t4, 4, unfind
+addi t4, $t4, 1
+
 
 printing:
 li $v0, 4
