@@ -50,6 +50,7 @@ addi $t1, $t1, 3					# incrementing 3 for three character stored.
 
 
 ender:	# if null or end line is found we want to end the storing loop. so branching to this label whenever null or end line is found
+beq $t8, 0, error
 
 printing:
 li $v0, 4
