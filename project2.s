@@ -56,6 +56,7 @@ la $s1, string+4		#to start from the end character
 handling:			#after four characters has been stored to $s1 register, now $s1 is handeled in this handling label.
 beq $t4, 4, unfind
 addi t4, $t4, 1
+addi $s1, $s1, -1
 
 
 printing:
