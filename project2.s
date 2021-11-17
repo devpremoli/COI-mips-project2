@@ -48,6 +48,13 @@ addi $t1, $t1, 3	# incrementing 3 for three character stored.
 j storing
 
 
+li $v0, 4
+la $a0, string
+li $a1, 5
+syscall
+
 exit:
 li $v0, 10
 syscall
+
+
