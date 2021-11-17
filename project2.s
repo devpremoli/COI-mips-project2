@@ -17,6 +17,8 @@ la $t1, input	#loading the address of input into $t1 register
 
 li $s6, 0	# for storing the sum of decimal value of each valid base 27 number (2992540%11=1, so N=27 in my case)
 
+li $t8, 0
+
 
 
 storing:
@@ -27,8 +29,7 @@ beq $t0, 0, exit	#branch if character is null
 beq $t0, 32, storing	#branch if character is space
 beq $t0, 11, storing	#branch if character is tab
 
-# if any of the above branching is not executed, then the character is valid.
-# Now storing the four characters to work with.
+beq $t8, 0, exit	# if this instruction is reached, valid character is found
 
 la $s1, string		#loading the address of string data into s1
 
