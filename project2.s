@@ -78,6 +78,7 @@ uppercase:
 bgt $t0, 81, error
 ble $t0, 81, valid
 
+valid:
 
 
 
