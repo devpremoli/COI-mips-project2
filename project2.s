@@ -22,10 +22,10 @@ li $s6, 0	# for storing the sum of decimal value of each valid base 27 number (2
 storing:
 lb $t0, ($t1)
 addi $t1, $t1, 1
-beq $t0, 10, label1	#branch if character is \n
-beq $t0, 0, label2	#branch if character is null
-beq $t0, 32, label3	#branch if character is space
-beq $t0, 11, label	#branch if character is tab
+beq $t0, 10, exit	#branch if character is \n
+beq $t0, 0, exit	#branch if character is null
+beq $t0, 32, exit	#branch if character is space
+beq $t0, 11, exit	#branch if character is tab
 
 # if any of the above branching is not executed, then the character is valid.
 # Now storing the four characters to work with.
@@ -45,12 +45,12 @@ lb $t0, 2($t1)
 sb $t0, 3($s1)		#storing the fourth character
 
 addi $t1, $t1, 3	# incrementing 3 for three character stored.
-j storing
 
 
+
+printing:
 li $v0, 4
 la $a0, string
-li $a1, 5
 syscall
 
 exit:
