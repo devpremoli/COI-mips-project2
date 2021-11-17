@@ -44,9 +44,9 @@ lb $t0, 1($t1)
 sb $t0, 2($s1)						#storing the third character
 
 lb $t0, 2($t1)
-sb $t0, 3($s1)		#storing the fourth character
+sb $t0, 3($s1)						#storing the fourth character
 
-addi $t1, $t1, 3	# incrementing 3 for three character stored.
+addi $t1, $t1, 3					# incrementing 3 for three character stored.
 
 
 
