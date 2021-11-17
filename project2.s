@@ -80,13 +80,18 @@ ble $t0, 81, ucase
 
 num:
 addi $a0, $t0, -48
+j conversion
 
 ucase:
 addi $a0, $t0, -55
+j conversion
 
 lcase:
 addi $a0, $t0, -87
+j conversion
 
+
+conversion:
 
 
 
