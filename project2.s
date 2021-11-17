@@ -29,7 +29,8 @@ beq $t0, 0, exit	#branch if character is null
 beq $t0, 32, storing	#branch if character is space
 beq $t0, 11, storing	#branch if character is tab
 
-beq $t8, 0, exit	# if this instruction is reached, valid character is found
+beq $t8, 1, exit	# if this instruction is reached, valid character is found
+li $t8, 1
 
 la $s1, string		#loading the address of string data into s1
 
