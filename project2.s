@@ -22,3 +22,9 @@ li $s6, 0	# for storing the sum of decimal value of each valid base 27 number (2
 storing:
 lb $t0, ($t1)
 addi $t1, $t1, 1
+beq $t0, 10, label1	#branch if character is \n
+beq $t0, 0, label2	#branch if character is null
+beq $t0, 32, label3	#branch if character is space
+beq $t0, 11, label	#branch if character is tab
+
+# if any of the above branching is not executed, then the character is valid.
