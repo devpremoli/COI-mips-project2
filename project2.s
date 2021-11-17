@@ -28,3 +28,8 @@ beq $t0, 32, label3	#branch if character is space
 beq $t0, 11, label	#branch if character is tab
 
 # if any of the above branching is not executed, then the character is valid.
+# Now storing the four characters to work with.
+
+la $s1, string		#loading the address of string data into s1
+sb $t0, 0($s1)		#storing the first character in the first byte of $s6
+j storing
