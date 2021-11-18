@@ -48,6 +48,7 @@ lb $t0, 2($t1)
 sb $t0, 3($s1)						#storing the fourth character
 
 addi $t1, $t1, 3					# incrementing 3 for three character stored.
+j storing
 
 
 ender:	# if null or end line is found we want to end the storing loop. so branching to this label whenever null or end line is found
