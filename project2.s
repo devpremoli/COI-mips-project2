@@ -64,6 +64,8 @@ beq $t0, 10, handling 			# if there is an end line character within the first va
 beq $t0, 32, space			# if there is a space in front or back of the input, we just carry on with the loop
 beq $t0, 0, handling
 
+li $t6, 1		# if $t6 = 1, a character that is not space or not null or not end line has been found.
+
 checker:		# a label where a character in $t0 is checked if it is valid or not
 
 bge $t0, 97, lowercase
@@ -120,6 +122,10 @@ printing:
 li $v0, 4
 la $a0, string
 syscall
+
+space:				
+beq $t6, 1, error		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input, in short, if a3 is set to 1 twice in the Loop label, it will recognize that its not valid.
+j handling
 
 error:
 li $v0, 4
