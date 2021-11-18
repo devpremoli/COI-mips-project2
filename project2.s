@@ -56,7 +56,7 @@ beq $t8, 0, error
 la $s1, string+4		#to start from the end character
 
 handling:			#after four characters has been stored to $s1 register, now $s1 is handeled in this handling label.
-beq $t4, 4, unfind
+beq $t4, 4, ending
 addi t4, $t4, 1
 addi $s1, $s1, 1
 lb $t0, ($s1)
@@ -107,6 +107,11 @@ mul $v0, $a0, $a2
 jr $ra
 
 
+ending:
+li $v0, 1				#printing the sum of all the converted values stored in $s5
+add $a0, $zero, $s6 
+syscall
+j exit
 
 printing:
 li $v0, 4
