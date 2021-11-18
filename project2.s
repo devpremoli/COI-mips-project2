@@ -118,10 +118,6 @@ add $a0, $zero, $s6
 syscall
 j exit
 
-printing:
-li $v0, 4
-la $a0, string
-syscall
 
 space:				
 beq $t6, 1, error		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input, in short, if a3 is set to 1 twice in the Loop label, it will recognize that its not valid.
