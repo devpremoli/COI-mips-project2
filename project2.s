@@ -61,8 +61,8 @@ addi $t4, $t4, 1
 addi $s1, $s1, -1
 lb $t0, ($s1)
 beq $t0, 10, handling 			# if there is an end line character within the first values then continue the loop
-beq $t0, 32, space
-beq $t0, 9, space			# if there is a space in front or back of the input, we just carry on with the loop
+beq $t0, 32, tabandspace
+beq $t0, 9, tabandspace			# if there is a space in front or back of the input, we just carry on with the loop
 beq $t0, 0, handling
 
 li $t6, 1		# if $t6 = 1, a character that is not space or not null or not end line has been found.
@@ -120,7 +120,7 @@ syscall
 j exit
 
 
-space:				
+tabandspace:				
 beq $t6, 1, error		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input, in short, if a3 is set to 1 twice in the Loop label, it will recognize that its not valid.
 j handling
 
