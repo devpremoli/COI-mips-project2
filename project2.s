@@ -97,6 +97,7 @@ j conversion
 
 conversion:
 jal subprogram
+add $s6, $s6, $v0
 
 subprogram:
 mul $v0, $a0, $a2
