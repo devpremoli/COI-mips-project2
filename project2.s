@@ -81,20 +81,26 @@ ble $t0, 81, ucase
 
 num:
 addi $a0, $t0, -48
+move $a2, $t3
 j conversion
 
 ucase:
 addi $a0, $t0, -55
+move $a2, $t3
 j conversion
 
 lcase:
 addi $a0, $t0, -87
+move $a2, $t3
 j conversion
 
 
 conversion:
-mul $a2, $a0, $t3
-add $s6, $a2, $zero
+jal subprogram
+
+subprogram:
+mul $v0, $a0, $a2
+jr $ra
 
 
 
