@@ -60,6 +60,9 @@ beq $t4, 4, ending
 addi t4, $t4, 1
 addi $s1, $s1, 1
 lb $t0, ($s1)
+beq $t0, 10, handling 			# if there is an end line character within the first values then continue the loop
+beq $t0, 32, space			# if there is a space in front or back of the input, we just carry on with the loop
+beq $t0, 0, handling
 
 checker:		# a label where a character in $t0 is checked if it is valid or not
 
