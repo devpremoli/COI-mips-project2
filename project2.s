@@ -58,7 +58,7 @@ la $s1, string+4		#to start from the end character
 handling:			#after four characters has been stored to $s1 register, now $s1 is handeled in this handling label.
 beq $t4, 4, ending
 addi t4, $t4, 1
-addi $s1, $s1, 1
+addi $s1, $s1, -1
 lb $t0, ($s1)
 beq $t0, 10, handling 			# if there is an end line character within the first values then continue the loop
 beq $t0, 32, space			# if there is a space in front or back of the input, we just carry on with the loop
