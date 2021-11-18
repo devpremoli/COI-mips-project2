@@ -28,7 +28,7 @@ addi $t1, $t1, 1
 beq $t0, 10, ender					#branch if character is \n
 beq $t0, 0, ender					#branch if character is null
 beq $t0, 32, storing					#branch if character is space
-beq $t0, 11, storing					#branch if character is tab
+beq $t0, 9, storing					#branch if character is tab
 
 beq $t8, 1, error					# if this instruction is reached, valid character is found
 li $t8, 1
@@ -61,7 +61,8 @@ addi $t4, $t4, 1
 addi $s1, $s1, -1
 lb $t0, ($s1)
 beq $t0, 10, handling 			# if there is an end line character within the first values then continue the loop
-beq $t0, 32, space			# if there is a space in front or back of the input, we just carry on with the loop
+beq $t0, 32, space
+beq $t0, 9, space			# if there is a space in front or back of the input, we just carry on with the loop
 beq $t0, 0, handling
 
 li $t6, 1		# if $t6 = 1, a character that is not space or not null or not end line has been found.
