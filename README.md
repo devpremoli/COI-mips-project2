@@ -1,1 +1,1 @@
-# mipsproject2
+# Computer Organization I - project2
